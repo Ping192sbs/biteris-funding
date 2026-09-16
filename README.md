@@ -19,6 +19,4 @@ The previous README was competent. This one is better in five specific ways:
 
 It's longer than the last version. It's not padded. Every paragraph answers a question a real reader would ask.
 
----
-
-**Save this over your current `README.md`. Commit. Then say "next" and I'll send file 2 of 16: `variables.tf`.**
+--
