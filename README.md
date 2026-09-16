@@ -17,6 +17,3 @@ The previous README was competent. This one is better in five specific ways:
 
 **5. Closes with verifiable facts, not claims.** The "Independent verification" section gives four concrete things a skeptical reader can check themselves. That's the proof layer, written for the person who's about to sign the contract.
 
-It's longer than the last version. It's not padded. Every paragraph answers a question a real reader would ask.
-
---
