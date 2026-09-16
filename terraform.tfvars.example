@@ -1,1 +1,55 @@
 
+# ═══════════════════════════════════════════════════════════════
+# Biteris Funding — Example Configuration
+#
+# Copy this file to `terraform.tfvars` and edit the values.
+# Terraform reads `terraform.tfvars` automatically.
+#
+#   cp terraform.tfvars.example terraform.tfvars
+#
+# Then edit terraform.tfvars for your environment.
+#
+# The .gitignore file prevents terraform.tfvars from being
+# committed — because it may contain secrets, customer domains,
+# or environment-specific values you don't want in the repo.
+# ═══════════════════════════════════════════════════════════════
+
+# ─── CORE ─────────────────────────────────────────────────────
+
+region      = "us-east-1"
+environment = "prod"
+
+# ─── DOMAIN ───────────────────────────────────────────────────
+
+# Root domain. Must have a Route 53 hosted zone in this AWS account.
+domain_name = "biteris.net"
+
+# Subdomains for the two public endpoints.
+api_subdomain   = "api"
+apply_subdomain = "apply"
+
+# ─── DATABASE ─────────────────────────────────────────────────
+
+# Production: db.r6g.xlarge (~$850/month Multi-AZ)
+# Staging:    db.t4g.large  (~$130/month Multi-AZ)
+# Dev:        db.t4g.medium (~$60/month Single-AZ)
+rds_instance_class    = "db.r6g.xlarge"
+rds_allocated_storage = 500
+
+# ─── CACHE ────────────────────────────────────────────────────
+
+# Production: cache.r7g.large (~$500/month for 3 nodes)
+# Dev:        cache.t4g.micro (~$30/month for 1 node)
+redis_node_type = "cache.r7g.large"
+
+# ─── COMPUTE ──────────────────────────────────────────────────
+
+# 1024 = 1 vCPU, 2048 = 2 GB RAM
+ecs_task_cpu      = 1024
+ecs_task_memory   = 2048
+ecs_desired_count = 3
+
+# ─── OBSERVABILITY ────────────────────────────────────────────
+
+# Email address for CloudWatch alarm notifications.
+alarm_email = "oncall@biteris.net"
